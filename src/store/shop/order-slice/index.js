@@ -13,7 +13,7 @@ export const createNewOrder = createAsyncThunk(
   "/order/createNewOrder",
   async (orderData) => {
     const response = await axios.post(
-      "http://localhost:3000/api/shop/order/create",
+      "https://regancy-back-production.up.railway.app/api/shop/order/create",
       orderData
     );
     console.log(response.data);
@@ -24,7 +24,7 @@ export const createNewOrderByStripe = createAsyncThunk(
   "/order/createNewOrderByStripe",
   async (orderData) => {
     const response = await axios.post(
-      "http://localhost:3000/api/shop/order/create-strip",
+      "https://regancy-back-production.up.railway.app/api/shop/order/create-strip",
       orderData
     );
 console.log(response.data);
@@ -37,7 +37,7 @@ export const capturePaymentStripe = createAsyncThunk(
   "/order/capturePaymentStripe",
   async ({ paymentId, payerId, orderId }) => {
     const response = await axios.post(
-      "http://localhost:3000/api/shop/order/captureStripe",
+      "https://regancy-back-production.up.railway.app/api/shop/order/captureStripe",
       {
        
         orderId
@@ -51,7 +51,7 @@ export const capturePayment = createAsyncThunk(
   "/order/capturePayment",
   async ({ paymentId, payerId, orderId }) => {
     const response = await axios.post(
-      "http://localhost:3000/api/shop/order/capture",
+      "https://regancy-back-production.up.railway.app/api/shop/order/capture",
       {
         paymentId,
         payerId,
@@ -67,7 +67,7 @@ export const getAllOrdersByUserId = createAsyncThunk(
   "/order/getAllOrdersByUserId",
   async (userId) => {
     const response = await axios.get(
-      `http://localhost:3000/api/shop/order/list/${userId}`
+      `https://regancy-back-production.up.railway.app/api/shop/order/list/${userId}`
     );
 
     return response.data;
@@ -78,7 +78,7 @@ export const getOrderDetails = createAsyncThunk(
   "/order/getOrderDetails",
   async (id) => {
     const response = await axios.get(
-      `http://localhost:3000/api/shop/order/details/${id}`
+      `https://regancy-back-production.up.railway.app/api/shop/order/details/${id}`
     );
 
     return response.data;
