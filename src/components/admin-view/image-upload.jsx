@@ -50,7 +50,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "https://socialist-pierette-regency-fa98bebb.koyeb.app/api/admin/products/upload-image",
+      "https://regancy-back-production.up.railway.app/api/admin/products/upload-image",
       data
     );
     console.log(response, "response");
